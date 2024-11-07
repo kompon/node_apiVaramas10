@@ -13,7 +13,7 @@ exports.createProduct = async (req, res) => {
         });
 
         // เพิ่ม URL สำหรับรูปภาพที่เก็บใน public/images
-        product.image = product.image ? `https://game-project-z482.onrender.com/public/images/${product.image}` : null;
+        product.image = product.image ? `https://node-apivaramas10.onrender.com/public/images/${product.image}` : null;
 
         res.status(201).json({ message: 'เพิ่มสินค้าใหม่สำเร็จ', product });
     } catch (error) {
@@ -28,7 +28,7 @@ exports.getdata = async (req, res) => {
         const products = await Product.findAll();
         const productsWithImageUrl = products.map(product => ({
             ...product.dataValues,
-            image: product.image ? `https://game-project-z482.onrender.com/public/images/${product.image}` : null
+            image: product.image ? `https://node-apivaramas10.onrender.com/public/images/${product.image}` : null
         }));
         res.status(200).json(productsWithImageUrl);
     } catch (error) {
